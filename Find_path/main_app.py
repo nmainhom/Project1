@@ -25,7 +25,7 @@ class HanoiTourismApp:
         # State
         self.selected_locations = []  # Danh sách địa điểm đã chọn (cả bắt buộc và optional)
         self.start_location = None  # Điểm bắt đầu
-        self.mandatory_locations = []  # Danh sách điểm BẮT BUỘC phải đi (NEW!)
+        self.mandatory_locations = []  # Danh sách điểm BẮT BUỘC phải đi 
         self.path_result = None  # Kết quả tìm đường
         
         # Khởi tạo UI
