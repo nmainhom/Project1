@@ -12,12 +12,7 @@ class ImageManager:
         self.images_cache = {}  # Cache để lưu hình ảnh
     
     def load_all_images(self, locations):
-        """
-        Load tất cả hình ảnh cho các địa điểm
         
-        Args:
-            locations: Dict chứa thông tin các địa điểm
-        """
         for loc_id, data in locations.items():
             image_path = data.get("image")
             
@@ -66,12 +61,7 @@ class ImageManager:
         return img_resized
     
     def create_placeholder(self, loc_id):
-        """
-        Tạo ảnh placeholder khi không load được ảnh thật
         
-        Args:
-            loc_id: ID của địa điểm
-        """
         # Tạo ảnh màu xám cho thumbnail
         img_thumb = Image.new('RGB', (80, 60), color='#94a3b8')
         self.images_cache[f"{loc_id}_thumb"] = ImageTk.PhotoImage(img_thumb)
@@ -88,15 +78,7 @@ class ImageManager:
         self.images_cache[f"{loc_id}_map"] = ImageTk.PhotoImage(img_map)
     
     def get_image(self, key):
-        """
-        Lấy hình ảnh từ cache
         
-        Args:
-            key: Key của ảnh trong cache
-            
-        Returns:
-            ImageTk.PhotoImage hoặc None
-        """
         return self.images_cache.get(key)
     
     def clear_cache(self):
